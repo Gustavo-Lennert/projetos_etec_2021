@@ -1,0 +1,52 @@
+--1
+delimiter $$
+CREATE TRIGGER tgr_produto_vend AFTER INSERT 
+ON produto
+FOR EACH ROW
+BEGIN
+	SELECT quantidade FROM produto WHERE codproduto = NEW.codproduto;
+   	UPDATE produto SET quantidade = (quantidade - NEW.quantidade) WHERE codproduto = NEW.codproduto;
+END $$
+delimiter ;
+
+--2 
+delimiter $$
+CREATE TRIGGER trg_cliente AFTER INSERT 
+ON cliente
+FOR EACH ROW
+BEGIN
+    INSERT INTO log VALUES (NULL, CURDATE(),CONCAT('Inserção do cliente: ',NEW.codcliente));
+END $$
+delimiter ;
+
+--3
+delimiter $$
+CREATE TRIGGER trg_produto AFTER update 
+ON produto
+FOR EACH ROW
+BEGIN
+    INSERT INTO log VALUES (NULL, CURDATE(),CONCAT('Atualização de produto: ',NEW.codproduto));
+END $$
+delimiter ;
+
+--4
+delimiter $$
+CREATE TRIGGER trg_item_pedido AFTER delete
+ON itempedido
+FOR EACH ROW
+BEGIN
+	INSERT INTO log VALUES (NULL, CURDATE(),CONCAT('Remoção do item pedido: ',OLD.codpedido));
+END $$
+delimiter ;
+
+--5
+delimiter $$
+CREATE TRIGGER tgr_pedido_1000 AFTER INSERT
+ON pedido
+FOR EACH ROW 
+BEGIN
+    if(NEW.valortotal > 1000) then
+        INSERT INTO log values (NULL, CURDATE(), CONCAT('Pedido maior que 1000: ',NEW.codpedido));
+    END if;
+END $$
+delimiter ;

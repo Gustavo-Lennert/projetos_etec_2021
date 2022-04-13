@@ -1,0 +1,172 @@
+abstract class Poligono{
+  static int nroPoligonos;
+  int nroLados;
+  
+  Poligono(this.nroLados);
+  
+  double getArea();
+  double getPerimetro();
+  
+  String toString(){
+   return "Quantidade de lados: " + this.nroLados.toString();
+  }
+ }
+ 
+  class Quadrado extends Poligono{
+    int lado;
+    
+    Quadrado(nroLados, this.lado):super(nroLados);
+    
+    double getArea(){
+      return lado.toDouble() * lado.toDouble();
+    }
+    
+    double getPerimetro(){
+      return lado.toDouble() * 4;
+    }
+    
+    bool equals(Quadrado quadrado){
+       bool retorno = false;
+      
+       if (this.lado == quadrado.lado && 
+        this.nroLados == quadrado.nroLados){
+        retorno = true;
+        }
+        return retorno;
+    }
+    
+    String toString(){
+      return super.toString() + ' / Valor de cada lado: ' + this.lado.toString();
+    }
+    
+   }
+
+   class Triangulo extends Poligono{
+     int lado1;
+     int lado2;
+     int lado3;
+     
+     Triangulo(nroLados, this.lado1, this.lado2,this.lado3):super(nroLados);
+     
+     bool eTriangulo(double lado1, double lado2, double lado3){
+       bool retorno = true;
+       
+       if((lado1 + lado2) > lado3 || (lado1 + lado3) > lado2 || (lado2 + lado3) > lado1){
+         return retorno;
+       }
+       else{
+         retorno = false;
+         return retorno;
+       }
+     }
+     
+     
+    double getArea(){
+      if(this.lado1 > this.lado2 && this.lado2 > this.lado3){
+        return (this.lado1 * this.lado3)/2;
+        }
+      
+      else if(this.lado1 > this.lado2 && this.lado3 > this.lado2){
+        return (this.lado1 * this.lado2)/2;  
+        }
+      
+      else{
+        if(this.lado2 > this.lado1 && this.lado1 > this.lado3){
+          return (this.lado2 * this.lado3)/2;  
+          }
+          
+        else if(this.lado2 > this.lado3 && this.lado3 > this.lado1){
+          return (this.lado2 * this.lado1)/2;
+        }
+          
+        else{
+         if(this.lado3 > this.lado1 && this.lado1 > this.lado2){
+           return (this.lado3 * this.lado2)/2;
+         }
+          
+         else if(this.lado3 > this.lado2 && this.lado2 > this.lado1){
+          return (this.lado3 * this.lado1)/2;
+         }
+        }
+      }
+    }
+     
+    double getPerimetro(){
+      return this.lado1.toDouble() + this.lado2.toDouble() + this.lado3.toDouble();
+    }
+     
+     
+    bool equals(Triangulo triangulo){
+     bool retorno = false;
+     
+     if(this.lado1 == triangulo.lado1 && 
+        this.lado2 == triangulo.lado2 &&
+        this.lado3 == triangulo.lado3 && 
+        this.nroLados == triangulo.nroLados){
+       retorno = true;
+     }
+      return retorno;
+    }
+     String toString(){
+      return super.toString() + ' / valor do lado 1: ' + this.lado1.toString() + ' / valor do lado 2: ' + this.lado2.toString() + ' / valor do lado 3: ' + this.lado3.toString();
+    }
+     
+   }
+      
+    
+void main(){
+  Triangulo trianguloF = new Triangulo(3,5,10,2);
+  Triangulo trianguloS = new Triangulo(3,8,1,2);
+  Triangulo trianguloT = new Triangulo(3,9,6,3);
+  
+  Quadrado quadradoF = new Quadrado(4,5);
+  Quadrado quadradoS = new Quadrado(4,10);
+  Quadrado quadradoT = new Quadrado(4,23);
+  
+  print('Valores do 1º triangulo: ');
+  print(trianguloF.toString());
+  print(trianguloF.getArea());
+  print(trianguloF.getPerimetro());
+  print(trianguloF.equals(trianguloF));
+  
+  print('-------------------------------');
+  
+  print('Valores do 1º quadrado: ');
+  print(quadradoF.toString());
+  print(quadradoF.getArea());
+  print(quadradoF.getPerimetro());
+  print(quadradoF.equals(quadradoF));
+  
+  print('-------------------------------');
+  
+  print('Valores do 2º triangulo: ');
+  print(trianguloS.toString());
+  print(trianguloS.getArea());
+  print(trianguloS.getPerimetro());
+  print(trianguloS.equals(trianguloS));
+  
+  print('-------------------------------');
+  
+  print('Valores do 2º quadrado: ');
+  print(quadradoS.toString());
+  print(quadradoS.getArea());
+  print(quadradoS.getPerimetro());
+  print(quadradoS.equals(quadradoS));
+  
+   print('-------------------------------');
+  
+  print('Valores do 3º triangulo: ');
+  print(trianguloT.toString());
+  print(trianguloT.getArea());
+  print(trianguloT.getPerimetro());
+  print(trianguloT.equals(trianguloT));
+  
+  print('-------------------------------');
+  
+  print('Valores do 3º quadrado: ');
+  print(quadradoT.toString());
+  print(quadradoT.getArea());
+  print(quadradoT.getPerimetro());
+  print(quadradoT.equals(quadradoT));
+ 
+}

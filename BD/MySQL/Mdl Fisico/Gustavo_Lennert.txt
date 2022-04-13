@@ -1,0 +1,45 @@
+create table bdfisico;
+use bdfisico;
+create table cliente(
+	nome varchar(30),
+    codigo int(5) primary key ,
+    status char(5),
+    limite_credito varchar(10),
+    cpf char(11),
+    rua varchar(30),
+    numero char(5),
+    cep int(8),
+    bairro varchar(15),
+    cidade varchar(15),
+    UF char(2),
+    complemento varchar(20)
+);
+create table produto(
+	nome varchar(20),
+    codigo int(5) primary key,
+    categoria varchar(20),
+    preco varchar(10),
+    quantidade int(2)
+);
+create table pedido(
+    codigo int(5) primary key,
+	data date,
+    numero int(5),
+    codCliente int(5),
+    foreign key(codCliente) references cliente(codigo)
+);
+create table pedidoProduto(
+	codigo int(5) primary key, 
+    codProduto int(5),
+    codPedido int(5),
+    foreign key(codProduto) references produto(codigo),
+    foreign key(codPedido) references pedido(codigo)
+);
+create table telefone(
+	numero int(12),
+	codigo int(3) primary key,
+    tipo varchar(10),
+    DDD char(3),
+	codCliente int(5),
+    foreign key(codCliente) references cliente(codigo)
+);

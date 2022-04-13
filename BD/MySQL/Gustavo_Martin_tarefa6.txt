@@ -1,0 +1,85 @@
+1. select * from Usuario where Especialidade = 'técnico';
+
+2. select Tipo, Velociadade from Maquina;
+
+3. select Tipo, Velociadade from Maquina where Tipo = 'Core ||' and Tipo = 'Pentium';
+
+4. select ID-Maquina, Tipo, Placa-Rede from Maquina where Placa-Rede < 10;
+
+5. select u.Nome-Usuário from Usuario as u inner join Possuem as p 
+on u.ID-Usuário = p.ID-Usuario inner join Maquina as m 
+on p.ID-Usuário = m.ID-Máquina where m.tipo = 'Core III' or 'CoreV';
+
+6. select m.ID-Maquina from Maquina as m inner join Instalado as i 
+on m.ID-Maquina = i.ID-Maquina inner join Software as s 
+on i.ID-Software = s.ID-Software where s.Produto = 'C++';
+
+7. select m.ID-Maquina, m.Memoria-RAM, s.Produto, s.Memoria-RAM from Maquina as m
+inner join Instalado as i on m.ID-Maquina = i.ID-Maquina inner join Software as s
+on i.ID-Software = s.ID-Software where s.Memoria-RAM > m.Memoria-RAM;
+
+8. select u.Nome-Usuario m.Velocidade from Usuario as u 
+inner join Possuem as p on u.ID-Usuário = p.ID-Usuario
+inner join Maquina as m on p.ID-Usuário = m.ID-Máquina;
+
+9. select nome-usuario from usuario where 
+id-usuario < (select id-usuario from usuario where nome-usuario = "Maria");
+
+10. select COUNT(*) from Maquina where Velocidade > '2.4';
+
+14. select sum(Hard-Disk) from software where produto = Word && produto = Lotus;
+
+15. select m.Hard-Disk from Maquina as m inner join Instalado as i 
+on m.ID-Maquina = i.ID-Maquina inner join Software as s
+on i.ID-Software = s.ID-Software;
+
+16. select avg(Hard-Disk) from software;
+
+17. select distinct count(*) FROM maquina;
+
+18. select Produto from Software where Hard-Disk between 90 and 250;
+
+19. select ID-Software, Produto from Software where like(%O%);
+
+20. Select s.Produto, s.Hard-Disk from Software as s
+inner join Instalado as i on i.ID-Software = s.ID-Software
+inner join Maquina as m on i.ID-Maquina = s.ID-Maquina 
+where m.Hard-Disk > s.Hard-Disk;
+
+23. select ID-Usuario, Nome-Usuario from usuario 
+where especialidade IS NULL;
+
+24. select id-usuario, nome from usuario order by nome;
+
+25. create table Maquina(
+ ID-Maquina char(10) primary key auto-increment,
+ Tipo char(20),
+ Velocidade decimal(4,1),
+ Hard-Disk decimal(5,0),
+ Placa-Rede decimal(5,0),
+ Memória-RAM deciamal (6,0),
+); 
+
+create table instalado(
+ ID-Software char(10),
+ foreign key ID-Maquina char (10) references Maquina(ID-Maquina)
+);
+
+26. delete from Software 
+where Hard-Disk < 200;
+
+27. insert Software (ID-Software, Produto, Hard-Disk, Memoria-RAM) 
+values ('202', 'Video Light', 300, 50);
+
+28. update Maquina set Memoria-RAM = Memoria-RAM * 1.2
+where Tipo = 'Ultra New'; 
+
+ 
+
+
+
+
+
+
+
+

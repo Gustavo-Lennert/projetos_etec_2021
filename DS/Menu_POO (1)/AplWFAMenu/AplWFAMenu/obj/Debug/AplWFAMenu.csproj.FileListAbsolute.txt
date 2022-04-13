@@ -1,0 +1,42 @@
+D:\Sistemas\Aulas\WFA\AplWFAMenu\AplWFAMenu\bin\Debug\AplWFAMenu.exe.config
+D:\Sistemas\Aulas\WFA\AplWFAMenu\AplWFAMenu\bin\Debug\AplWFAMenu.exe
+D:\Sistemas\Aulas\WFA\AplWFAMenu\AplWFAMenu\bin\Debug\AplWFAMenu.pdb
+D:\Sistemas\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.csprojResolveAssemblyReference.cache
+D:\Sistemas\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.frmSplash.resources
+D:\Sistemas\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.Properties.Resources.resources
+D:\Sistemas\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.csproj.GenerateResource.Cache
+D:\Sistemas\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.exe
+D:\Sistemas\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.pdb
+D:\Sistemas\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.frmLogin.resources
+D:\Sistemas\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.frmMenuPrincipal.resources
+E:\Sistemas\C#\Aulas\WFA\AplWFAMenu\AplWFAMenu\bin\Debug\AplWFAMenu.exe.config
+E:\Sistemas\C#\Aulas\WFA\AplWFAMenu\AplWFAMenu\bin\Debug\AplWFAMenu.exe
+E:\Sistemas\C#\Aulas\WFA\AplWFAMenu\AplWFAMenu\bin\Debug\AplWFAMenu.pdb
+E:\Sistemas\C#\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.csprojAssemblyReference.cache
+E:\Sistemas\C#\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.frmLogin.resources
+E:\Sistemas\C#\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.frmMenuPrincipal.resources
+E:\Sistemas\C#\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.frmSplash.resources
+E:\Sistemas\C#\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.Properties.Resources.resources
+E:\Sistemas\C#\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.csproj.GenerateResource.cache
+E:\Sistemas\C#\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.csproj.CoreCompileInputs.cache
+E:\Sistemas\C#\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.exe
+E:\Sistemas\C#\Aulas\WFA\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.pdb
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\bin\Debug\AplWFAMenu.exe.config
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\bin\Debug\AplWFAMenu.exe
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\bin\Debug\AplWFAMenu.pdb
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\bin\Debug\AplClsPersistencia.dll
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\bin\Debug\AplClsBancoDados.dll
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\bin\Debug\MySql.Data.dll
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\bin\Debug\AplClsPersistencia.pdb
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\bin\Debug\AplClsBancoDados.pdb
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.csprojAssemblyReference.cache
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.frmLogin.resources
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.frmMenuPrincipal.resources
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.frmSplash.resources
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.Properties.Resources.resources
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.csproj.GenerateResource.cache
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.csproj.CoreCompileInputs.cache
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.csproj.CopyComplete
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.exe
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.pdb
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplWFAMenu\AplWFAMenu\obj\Debug\AplWFAMenu.frmCadastroPessoas.resources

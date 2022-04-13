@@ -1,0 +1,54 @@
+int LEDG = 10;
+int LEDA = 9;
+int LEDV = 8;
+int LDR = A0;
+int Botao = 13;
+int estado = LOW;
+int valBot;
+int entrada = 0;
+int anterior=0;
+void setup() {
+ Serial.begin(9600); 
+ pinMode(LEDG, OUTPUT);
+ pinMode(LEDA, OUTPUT);
+ pinMode(LEDV, OUTPUT);
+ pinMode(Botao, INPUT);
+}
+
+void loop() {
+ int porc;
+ valBot = digitalRead(Botao);
+ entrada = analogRead(LDR);  
+ entrada = map(entrada,54,974,1,100);
+  if(entrada < 100){
+    digitalWrite(LEDG, HIGH);
+	digitalWrite(LEDA, LOW);
+	digitalWrite(LEDV, LOW);
+  }
+  	
+  else if(entrada >= 100 && entrada <= 500)
+  {
+	digitalWrite(LEDA, HIGH); 
+    digitalWrite(LEDG, LOW);
+	digitalWrite(LEDV, LOW);
+  }
+  
+   else
+    digitalWrite(LEDV, HIGH); 
+  
+ digitalWrite(LEDG, LOW);
+ digitalWrite(LEDA, LOW);
+ digitalWrite(LEDV, LOW);
+  
+ if(valBot == HIGH && anterior == LOW){
+  	estado = !estado;
+  }
+  digitalWrite(A0, estado);
+  digitalWrite(LEDG, estado);
+  digitalWrite(LEDA, estado);
+  digitalWrite(LEDV, estado);
+  anterior = valBot;
+  
+  
+ delay(100);
+}

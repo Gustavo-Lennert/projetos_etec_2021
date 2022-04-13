@@ -1,0 +1,45 @@
+create table departamento(
+	departamentoId int primary key auto_increment,
+    nome varchar(30)
+);
+
+create table funcionario(
+	funcionarioId int primary key auto_increment,
+    nome varchar(30) not null,
+    funcao varchar(15) not null,
+    dtnascto DATE not null,
+    salario decimal(7,2) not null,
+	idDepto int, 
+    foreign key (idDepto) references Departamento(departamentoId)
+);
+
+select * from funcionario where not year(dtnascto) != 1975;
+select nome from funcionario where nome like '%em%';
+select distinct funcao from funcionario;
+
+insert into departamento (departamentoId, nome)
+values (null, 'Seneamento'), (null, 'RH'), (null, 'TI'), (null, 'Almoxarifado');
+select * from Departamento;
+
+select f.nome from funcionario as f
+inner join departamento as d on f.idDepto = d.departamentoId where 
+f.funcao = 'Segurança' and d.nome = 'Saneamento';
+
+select f.nome from funcionario as f
+inner join departamento as d on f.idDepto = d.departamentoId where d.nome = 'RH';
+
+select f.nome, d.nome from funcionario as f
+inner join departamento as d on f.idDepto = d.departamentoId where 
+f.salario between 500.00 and 150.00;
+
+select f.nome from funcionario as f
+inner join departamento as d on f.idDepto = d.departamentoId where d.nome = 'TI' 
+and f.salario > 2000.00;
+
+select count(*) from funcionario as f
+inner join departamento as d on f.idDepto = d.departamentoId where d.nome = 'Almoxarifado';
+
+select * from funcionario where funcao = 'Programador';
+update funcionario set funcao = 'Analistade Sistemas Junior' where funcao = 'Programador';
+
+delete from funcionario where year(dtnascto) > 2010;

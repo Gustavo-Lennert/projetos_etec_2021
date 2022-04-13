@@ -1,0 +1,70 @@
+#include <Servo.h> 
+Servo microS;
+int angulo;
+
+
+void setup()
+{
+  Serial.begin(9600);
+  
+  //Micro Servo
+  microS.attach(11);
+  
+  //Sensor (detect)
+  pinMode(13, INPUT);
+  
+  //Led vermelho
+  pinMode(12, INPUT);
+  
+  //Led verde
+  pinMode(8, INPUT);
+  
+  //Buzzer
+  pinMode(7, INPUT);
+}
+
+void loop(){
+ 
+  bool detect = digitalRead(13);
+  digitalWrite(12, LOW);
+  
+  if(detect){
+    Serial.println("Foi detectado alguma presença!");
+    digitalWrite(8, LOW);
+    digitalWrite(12, HIGH);
+    delay(350);
+    digitalWrite(12, LOW);
+    delay(350);
+    digitalWrite(12, HIGH);
+    
+    
+    //Buzzer
+    digitalWrite(7, HIGH);
+    tone(7, 500, 300);
+    delay(200);
+   	tone(7, 1500, 300);
+    delay(200);
+    tone(7, 2000, 300);
+    delay(200);
+
+  }
+  
+  if(!detect){
+      for (angulo = 0; angulo < 180; angulo += 1) {
+      microS.write(angulo);
+      delay(15); 
+      }
+
+      delay(500);
+
+      for (angulo = 180; angulo >= 1; angulo -= 2) { 
+      microS.write(angulo);
+      delay(5);
+      } 
+
+      Serial.println("Não foi detectado nenhuma presença!");
+      digitalWrite(8, HIGH);
+    }
+  delay(0);
+ }
+

@@ -1,0 +1,93 @@
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(A0,INPUT);
+
+  pinMode(4, OUTPUT); //azul
+  pinMode(3, OUTPUT); //verde
+  pinMode(2, OUTPUT); //vermelho
+}
+
+void loop()
+{
+  int valor;
+  int temperatura;
+  valor = analogRead(A0);
+  temperatura = map(valor,20,358,-40,125);
+  Serial.println(temperatura);
+  delay(1000);
+
+//azul - temperatura baixa
+  
+  if (temperatura <= -21 && temperatura >= -40) {
+    digitalWrite(4, HIGH);
+   	delay(50);
+  	digitalWrite(4, LOW);
+  	delay(0);
+  }
+  
+  if (temperatura >= -20 && temperatura <= 0) {
+    digitalWrite(4, HIGH);
+   	delay(1000);
+  	digitalWrite(4, LOW);
+  	delay(100);
+  }
+
+  if (temperatura >= 1 && temperatura <= 5) {
+    digitalWrite(4, HIGH);
+    delay(3000);
+    digitalWrite(4, LOW);
+    delay(100);
+  }
+  
+//verde - temperatura comum
+  
+  if (temperatura >= 6 && temperatura <= 45) {
+    digitalWrite(3, HIGH);
+    delay(3000);
+    digitalWrite(3, LOW);
+    delay(100);
+  }
+  
+//vermelho - temperatura alta
+  
+  if (temperatura >= 46 && temperatura <= 60) {
+    digitalWrite(2, HIGH);
+    delay(3000);
+    digitalWrite(2, LOW);
+    delay(100);
+  }
+  
+  if (temperatura >= 61 && temperatura <= 80) {
+    digitalWrite(2, HIGH);
+    delay(1000);
+    digitalWrite(2, LOW);
+    delay(100);
+  }
+  
+  if (temperatura >= 81 && temperatura <= 100) {
+    digitalWrite(2, HIGH);
+    delay(50);
+    digitalWrite(2, LOW);
+    delay(0);
+  }
+  
+//todos os leds - temperatura altíssima
+  
+  if (temperatura > 100) {
+    digitalWrite(4, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(2, HIGH);
+    
+    delay(50);
+  	digitalWrite(4, LOW);
+  	delay(0);
+    delay(50);
+    digitalWrite(3, LOW);
+    delay(0);
+    delay(50);
+    digitalWrite(2, LOW);
+    delay(0);
+  
+  }
+}

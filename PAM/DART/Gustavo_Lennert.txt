@@ -1,0 +1,29 @@
+class Cliente{
+  
+  String cpf;
+  String name;
+  double rendaMensal;
+  
+  Cliente(this.cpf, this.name, this.rendaMensal){
+  }
+  
+  String toString(){
+    return 'cpf: ' + this.cpf.toString() + ' / ' + ' Nome:  ' + this.name.toString() + ' / '+ 'Renda mensal: ' +  this.rendaMensal.toString() + ' reais';
+  }
+  
+  bool equals(Cliente cliente){
+    return ((this.cpf == cliente) && (this.name == cliente) && (this.rendaMensal == cliente));
+  }
+  
+  double getLimiteCredito(){
+    return (this.rendaMensal * 30) /100; 
+  }
+}
+
+void main(){
+  
+  Cliente cliente = new Cliente('52278699873' ,'nome_aleatorio',1500);
+
+  print("Informações do cliente: " + cliente.toString());
+  print("Limite de crédito: " + cliente.getLimiteCredito().toString());
+}

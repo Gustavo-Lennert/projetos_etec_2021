@@ -1,0 +1,255 @@
+1)
+CREATE DATABASE universidade;
+USE universidade;
+
+ 
+
+ 
+
+ 
+
+CREATE TABLE curso(
+    numCurso INT(4) PRIMARY KEY,
+    nome VARCHAR(20) NOT NULL,
+    totalCreditos INT(4)    
+);
+
+ 
+
+ 
+
+ 
+
+CREATE TABLE aluno(
+    numAluno INT(3) PRIMARY key,
+    nome VARCHAR(50),
+    endereco VARCHAR(30),
+    cidade VARCHAR(25),
+    telefone VARCHAR(14),
+    numCurso INT(4),
+    FOREIGN KEY(numCurso) REFERENCES curso(numCurso)
+);
+
+ 
+
+ 
+
+ 
+
+CREATE TABLE disciplina(
+    numDisp INT(2) PRIMARY key,
+    nome VARCHAR(25),
+    quantCreditos INT(2)
+);
+
+ 
+
+ 
+
+ 
+
+CREATE TABLE professor(
+    numFunc INT(5) PRIMARY KEY,
+    nome VARCHAR(50),
+    admissao date,
+    areaPesquisa VARCHAR(25)
+);
+
+ 
+
+ 
+
+ 
+
+CREATE TABLE aula(
+    numAluno INT(3),
+    numDisp INT(2),
+    numFunc INT(5),
+    semestre CHAR(7),
+    nota DECIMAL(3,1),
+    PRIMARY KEY(numAluno,numDisp,numFunc,semestre),
+    FOREIGN KEY(numAluno) REFERENCES aluno(numAluno),
+    FOREIGN KEY(numDisp) REFERENCES disciplina(numDisp),
+    FOREIGN KEY(numFunc) REFERENCES professor(numFunc)
+);
+
+ 
+
+ 
+
+ 
+
+CREATE TABLE disciplinaCurso(
+    numDisp INT(2),
+    numCurso INT(4),
+    PRIMARY KEY(numDisp, numCurso),
+    FOREIGN KEY(numDisp) REFERENCES disciplina(numDisp),
+    FOREIGN KEY(numCurso) REFERENCES curso(numCurso)
+);
+
+ 
+
+ 
+
+ 
+
+INSERT INTO professor VALUES (45675,"Abgair Simon Ferreira","1992-04-10","Banco de Dados"),
+                                      (45690,"Ramon Travanti","1993-05-20","Direto Romano"),
+                                      (45691,"Gustavo Golveia Netto","1993-04-05","Sociologia"),
+                                      (45692,"Marcos Salvador","1993-03-31","Matematica Financeira"),
+                                      (45693,"Cintia Falcão","1993-02-15","Engenharia de Software"); 
+
+ 
+
+ALTER TABLE curso MODIFY nome VARCHAR(50);   
+DESC curso;                                   
+
+ 
+
+INSERT INTO curso VALUES (2142,"Engenharia Civil",1500),
+                                 (2143,"Ciência da Computação",2000),
+                                 (2144,"Direito",1750),
+                                 (2145,"Pedagogia", 1500),
+                                 (2146,"Odontologia", 1600);
+
+ 
+
+INSERT INTO disciplina VALUES (1,'Banco de Dados',30),
+                                        (2,'Estrutura de Dados',30),
+                                        (3,'Direito Penal',25),
+                                        (4,'Calculo Numerico',30),
+                                        (5,'Psicologia Infantil',25),
+                                        (6,'Direito Tributário',33),
+                                        (7,'Engenharia Software',27);
+
+ 
+
+SELECT * FROM disciplina;    
+
+ 
+
+INSERT INTO disciplinaCurso VALUES (1,2143),                            
+                                              (2,2143),
+                                              (3,2144),
+                                              (4,2143),
+                                              (4,2142),
+                                              (5,2145),
+                                              (6,2144),    
+                                              (7,2143),
+                                              (7,2143);
+
+ 
+
+INSERT INTO aluno VALUES (111,'Edvaldo Carlos Silva','Av. São Carlos, 186','São Carlos-SP','(017) 276-9999',2143),
+                         (112,'João Benedito Scapin','R. José Bonifácio, 70','São Carlos-SP','(017) 276-9999',2142),
+                         (113,'Carol Antonia Silveira','R. Luiz Camões, 120','Ibaté-SP','(017) 276-9999',2145),
+                         (114,'Marcos João Casanova','Av. São Carlos, 176','São Carlos-SP','(017) 276-9999',2143),
+                         (115,'Simone Cristina Lima','R. Raul Junior, 180','São Carlos-SP','(017) 276-9999',2144),
+                         (116,'Ailton Castro','R. Antonio Carlos, 120','Ibaté-SP','(017) 276-9999',2142),
+                         (117,'José Paulo Figueira','R. XV Novembro, 871','São Carlos-SP','(017) 276-9999',2145);
+
+ 
+
+INSERT INTO aula VALUES (111,1,45675,'01/1998',8.5),
+                                (111,2,45675,'01/1998',6),
+                                (111,2,45675,'02/1998',7),
+                                (115,3,45690,'01/1998',4.5),
+                                (115,3,45690,'02/1998',7.5),
+                                (111,4,45692,'01/1998',8),
+                                (112,4,45692,'01/1998',7),
+                                (113,5,45691,'01/1998',7.5),
+                                (115,6,45690,'01/1998',9),
+                                (111,7,45693,'01/1998',10),
+                                (112,7,45693,'01/1998',5.5),
+                                (112,7,45693,'02/1998',10),
+                                (114,1,45675,'01/1998',7),
+                                (114,2,45675,'01/1998',8),
+                                (114,4,45675,'01/1998',6.5),
+                                (114,4,45692,'02/1998',8.5),
+                                (116,4,45692,'01/1998',3.5),
+                                (116,4,45692,'02/1998',9.5),
+                                (114,7,45693,'01/1998',9.5),
+                                (116,7,45693,'01/1998',8.5);
+
+2)
+A- SELECT nome from Curso;
+
+B- SELECT nome, telefone from Aluno where Cidade = "Sao Carlos - SP" ORDER BY nome DESC;
+
+C- SELECT nome from Professor where Admissao < '01-01-1993';
+ 
+D- SELECT nome from Aluno where nome like 'J%';Nu
+
+E- SELECT d.nome from Disciplina as d inner join DisciplinaCurso as dc 
+on d.NumDisp = dc.NumDisp inner join Curso as c on c.NumCurso = dc.NumCurso where c.nome = "Ciencia da Computacao";
+
+F- SELECT c.nome from Curso as c inner join DisciplinaCurso as dc on c.NumCurso = dc.NumCurso
+inner join Disciplina as d on d.NumDisp = dc.NumDisp where d.nome = "Calculo Numerico";
+
+G- SELECT d.nome from Disciplina as d inner join Aula as au on d.NumDisp = au.NumDsip 
+inner join Aluno as al on al.NumAluno = au.NumAluno where al.nome = 'Marcos João Casanova' and au.Semestre = '01-1998';
+
+H-  SELECT d.nome from Disciplina as d inner join Aula as au on d.NumDisp = au.NumDisp inner join Aluno as al on au.NumAluno = al.NumAluno
+where al.nome = 'Ailton Castro' and nota < 7;
+
+I- SELECT al.nome from aluno as al inner join Aula as au on al.NumAluno = au.NumAluno
+inner join Disciplina as d on au.NumDisp = d.NumDisp where d.nome = 'Cálculo Numérico' and au.nota < 7;
+
+J-  SELECT d.nome from Disciplina as d inner join Aula as au d.NumDispc = au.NumDisp
+inner join Professor as p au.NumFunc = p.NumFun where d.nome like '%direito%';
+
+K- SELECT p.nome from Professor as p inner join Aula as au on p.NumFunc = au.NumFunc inner join Discilplina as d on d.NumDisp = au.NumDisp
+where d.nome = 'Banco de dados';
+
+L- SELECT MAX(au.nota), MIN(au.nota) from Aula as au inner join Disciplina as d on au.NumDisp = d.NumDisp
+where au.semestre = '01-1998' AND d.nome = 'Calculo Numerico';
+
+M- SELECT al.nome, MAX(au.nota) from Aluno as al inner join Aula as au on al.NumAluno = au.NumAluno
+inner join Disciplina as d on d.NumDisp = au.NumDisp where d.nome = 'Engenharia de Software' AND au.semestre = '01-1998';
+
+N- SELECT al.nome, d.nome, p.nome from Aluno as al ORDERBY al.nome inner join Aula as au al.NumAluno = au.NumAluno 
+inner join Professor as p on au.NumFunc = p.NumFunc inner join Disciplina as d on au.NumDisp = d.NumDisp Where au.semestre = '01-1998';
+
+O- SELECT al.nome, d.nome, au.nota from Aluno as al inner join Aula as au al.NumAluno = au.NumAluno
+inner join Disciplina as d on d.NumDisp = au.NumDisp inner join DisciplinaCurso as dc on dc.NumDisp = d.NumDisp
+inner join Curso as c on c.NumCurso = dc.NumCurso where au.semestre = '01-1998' AND  c.nome = 'Ciencia da computacao';
+
+P- SELECT AVG(au.nota) from Aula inner join Professor as p on au.NumFunc = p.NumFunc where p.NumFunc = '45692';
+
+Q- SELECT al.nome, d.nome, au.nota from Aluno as al ORDERBY d.nome inner join aula as au on al.NumAluno = au.NumAluno 
+inner join Disciplina as d on d.NumDisp = au.NumDisp where au.notas >='5.0' AND <='7.0';
+
+R- SELECT AVG(au.nota) from Aula as au inner join Disciplina as d on au.NumDisp = d.NumDisp
+where d.nome = 'Calculo numerico' AND au.semestre = '01-1998';
+
+S- SELECT COUNT(al.nome) from Aluno as al inner join Aula as au on al.NumAluno = au.NumAluno inner join Professor as p on p.NumFunc = au.NumFunc 
+where p.nome = 'Abgair Simon Ferreira' AND au.Semestre = '01-1998';
+
+T- SELECT AVG(au.nota) from Aula as au inner join Aluno as al on al.NumAluno = au.NumAluno where al.nome = 'Edvaldo Carlos Silva';
+
+U- SELECT AVG(au.nota) from Aula ORDERBY d.nome inner join Disciplina as d on d.NumDisp = au.NumDisp inner join DisciplinaCurso as dc on d.NumDisp = dc.NumDisp 
+inner join Curso as c on c.NumCurso = dc.NumCurso where au.Semestre = '01-1998';
+
+V- SELECT AVG(au.nota) from Aula ORDERBY p.nome inner join Professor as p on p.NumFunc = au.NumFunc where au.Semestre = '01-1998';
+
+W- SELECT AVG(au.nota) from Aula as au inner join Disciplina as d on d.NumDisp = au.NumDisp inner join DisciplinaCurso as dc on dc.NumDisp = d.NumDisp 
+inner join Curso as c on c.NumCurso = dc.NumCurso where au.semestre = '01-1998' AND c.nome = 'Ciencia da Computacao';
+
+X- SELECT SUM(d.QuantCreditos) from Disciplcina as d inner join Aula as au on d.NumDisp = au.NumDisp inner join Aluno as al on al.NumAluno = au.NumAluno
+where a.nota >= '7.0' al.aluno = 'Edvaldo Carlos Silva';
+
+Y- SELECT al.Nome, SUM(d.QuantCreditos) from Aluno as al inner join Aula as au on al.NumAluno = au.NumAluno inner join Diciplina as d on d.NumDisp = au.NumDisp
+where d.QuntoCreditos >= '70' AND au.nota => '7.0';
+
+Z- SELECT al.nome, d.nome, p.nome from Aluno as al inner join Aula as au al.NumAluno = au.NumAluno inner join Professor as p on au.NumFunc = p.NumFunc
+inner join Diciplina as d on au.NumDisp = d.NumDisp where au.Semestre = '01-1998' AND c.nome = 'Ciencia da Cumputacao' AND au.nota >='8.0';
+
+
+3) 
+A- UPDATE Disciplina set Nome = "Banco de Dados Aplicado" where NumDisp = '1';
+B- UPDATE Aula set Nota = '0' where Semestre = '02-1998';
+C- UPDATE Disciplina set QuantCreditos = '10' where QuantCreditos <> '10';
+D- TRUNCATE TABLE "Aula"; 
+E- ALTER TABLE Aula add column Observação varchar(25);
+
+

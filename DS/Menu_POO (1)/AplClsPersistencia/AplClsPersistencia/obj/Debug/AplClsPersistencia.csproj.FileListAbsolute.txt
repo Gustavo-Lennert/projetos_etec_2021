@@ -1,0 +1,9 @@
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsPersistencia\AplClsPersistencia\bin\Debug\AplClsPersistencia.dll
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsPersistencia\AplClsPersistencia\bin\Debug\AplClsPersistencia.pdb
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsPersistencia\AplClsPersistencia\bin\Debug\AplClsBancoDados.dll
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsPersistencia\AplClsPersistencia\bin\Debug\MySql.Data.dll
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsPersistencia\AplClsPersistencia\bin\Debug\AplClsBancoDados.pdb
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsPersistencia\AplClsPersistencia\obj\Debug\AplClsPersistencia.csproj.CoreCompileInputs.cache
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsPersistencia\AplClsPersistencia\obj\Debug\AplClsPersistencia.csproj.CopyComplete
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsPersistencia\AplClsPersistencia\obj\Debug\AplClsPersistencia.dll
+C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsPersistencia\AplClsPersistencia\obj\Debug\AplClsPersistencia.pdb

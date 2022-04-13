@@ -1,0 +1,38 @@
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(A0, INPUT);
+  
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  
+}
+
+void loop()
+{
+  int temperatura;
+  int valor;
+  valor = analogRead(A0);
+  temperatura = map(valor,20,358,-40,125);
+  Serial.println(temperatura);
+  
+  
+  if(temperatura >= 50){
+      digitalWrite(13, HIGH);
+      delay(0);
+  }
+  if(temperatura <= 30){
+      digitalWrite(13, LOW);
+      delay(0);
+  }
+  if(temperatura >= 90){
+    digitalWrite(12, HIGH);
+    tone(12, 500, 200);
+    delay(200);
+   	tone(12, 1500, 200);
+    delay(200);
+    tone(12, 2000, 200);
+    delay(200);
+  }
+  
+}

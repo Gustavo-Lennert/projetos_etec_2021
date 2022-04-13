@@ -1,0 +1,43 @@
+1- 
+call tipo_conta(id);
+
+delimiter &&
+
+create procedure tipo_conta(in id INT)
+begin
+	if id = 'c' then
+	   select tipoConta from conta where id='c';
+
+	else
+	 select tipoConta from conta where id='p';
+
+	end if;
+end &&
+delimeter;
+
+
+2-
+call transf(valor, idContaOrigem, idContaDestino);
+
+delimiter &&
+create procedure transf_conta(in valor decimal, in idContaOrigem int, in idContaDestino int)
+begin
+	update conta set saldo = saldo + valor where= idContaDestino;
+
+	update conta set saldo = saldo - valor where= idContaOrigem;
+
+	insert into transferencia(valor, idContaOrigem, idContaDestino) 
+	values(valor, idContaOrigem, idContaDestino);
+end &&
+delimeter;
+
+3-
+call saque(id, valor);
+
+delimiter &&
+
+create procedure saque(in id_conta int, in valor decimal)
+begin
+	update conta set saldo = saldo - valor where id = id_conta; 
+end &&
+delimeter;

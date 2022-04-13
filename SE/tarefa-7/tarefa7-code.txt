@@ -1,0 +1,57 @@
+const int vermelho = 13;
+const int azul = 12;
+const int verde = 11;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(A0, INPUT);
+ 
+  pinMode(vermelho, OUTPUT);
+  pinMode(azul, OUTPUT);
+  pinMode(verde, OUTPUT);
+}
+
+void loop()
+{
+  int valor;
+  int temperatura;
+  valor = analogRead(A0); 
+  temperatura = map(valor,20,358,-40,125);
+  Serial.println(temperatura);
+  
+  if(temperatura >= 20 && temperatura <= 25){
+    digitalWrite(azul, LOW);
+  	delay(0);
+    digitalWrite(vermelho, LOW);
+  	delay(0);
+    digitalWrite(verde, HIGH);
+  	delay(1000); 
+  }
+  if(temperatura >= 15 && temperatura <= 19){
+    digitalWrite(verde, LOW);
+  	delay(0);
+    digitalWrite(vermelho, LOW);
+  	delay(0);
+    digitalWrite(azul, HIGH);
+  	delay(1000);
+  }
+  if((temperatura >= 5 && temperatura <= 14) or (temperatura >= 26 && temperatura <= 40)){
+    digitalWrite(azul, LOW);
+  	delay(0);
+    digitalWrite(verde, LOW);
+  	delay(0);
+    digitalWrite(vermelho, HIGH);
+  	delay(1000);
+  }
+  
+  if(temperatura >= 41 && temperatura <= 4){
+    digitalWrite(vermelho, LOW);
+  	delay(50);
+    digitalWrite(vermelho, HIGH);
+  	delay(50);
+  	digitalWrite(vermelho, LOW);
+  	delay(50);
+  }
+  
+}

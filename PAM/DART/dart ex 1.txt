@@ -1,0 +1,45 @@
+void main(){
+  double lado1=4, lado2=4, lado3=5;
+  
+  if(eTriangulo(lado1,lado2,lado3) == true){
+    print('Os lados: ' + lado1.toString() + ', ' + lado2.toString() + ', ' + lado3.toString() + ' ' + 'formam um triangulo');
+    print( 'O tipo do trinagulo será: ' + tipo(lado1,lado2,lado3));
+    print( 'O valor do perimetro será: ' + perimetro(lado1,lado2,lado3).toString());
+    print( 'O valor da área será: ' + areaAproximada(lado1,lado2,lado3).toString());
+  }
+    
+} 
+bool eTriangulo(double lado1, lado2, lado3){ 
+    if(((lado1 + lado2) > lado3) && ((lado2 + lado3) > lado1) && ((lado1 + lado3) > lado2)){
+      return true;
+    }
+}
+String tipo(double ladoT1, ladoT2, ladoT3){
+    if((ladoT1 == ladoT2) && (ladoT2 == ladoT3)){
+        return 'Equilátero';
+    }
+    else if((ladoT1 == ladoT2) && (ladoT2 != ladoT3)){
+        return 'Isóceles';
+    }
+    else{
+        return 'Escaleno';
+    }
+}
+double perimetro(double ladoP1, ladoP2, ladoP3){
+  return ladoP1 + ladoP2 + ladoP3;
+}
+double areaAproximada(double ladoA1, ladoA2, ladoA3){
+  double result=0;
+  
+    if((ladoA1 < ladoA3) && (ladoA2 < ladoA3)){
+      result = ((ladoA1 * ladoA2) / 2);
+    }
+    else if ((ladoA2 < ladoA1) && (ladoA3 < ladoA1)){
+      result = ((ladoA3 * ladoA2) / 2);
+    }
+    if((ladoA3 < ladoA2) && (ladoA1 < ladoA2)){
+      result = ((ladoA1 * ladoA3) / 2);
+    }
+  
+  return result;
+}
