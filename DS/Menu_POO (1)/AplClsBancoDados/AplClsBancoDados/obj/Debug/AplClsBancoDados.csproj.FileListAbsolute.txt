@@ -1,8 +1,0 @@
-C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsBancoDados\AplClsBancoDados\bin\Debug\AplClsBancoDados.dll
-C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsBancoDados\AplClsBancoDados\bin\Debug\AplClsBancoDados.pdb
-C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsBancoDados\AplClsBancoDados\bin\Debug\MySql.Data.dll
-C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsBancoDados\AplClsBancoDados\obj\Debug\AplClsBancoDados.csproj.CoreCompileInputs.cache
-C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsBancoDados\AplClsBancoDados\obj\Debug\AplClsBancoDados.csproj.CopyComplete
-C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsBancoDados\AplClsBancoDados\obj\Debug\AplClsBancoDados.dll
-C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsBancoDados\AplClsBancoDados\obj\Debug\AplClsBancoDados.pdb
-C:\Users\Fabricio\Documents\Visual Studio 2019\AplClsBancoDados\AplClsBancoDados\obj\Debug\AplClsBancoDados.csprojAssemblyReference.cache
